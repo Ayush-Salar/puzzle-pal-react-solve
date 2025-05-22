@@ -1,0 +1,201 @@
+
+/* Global Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* App Container */
+.sudoku-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Header */
+.sudoku-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.sudoku-header h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin: 0;
+}
+
+/* Main Content */
+.sudoku-main {
+  width: 100%;
+  max-width: 500px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Footer */
+.sudoku-footer {
+  margin-top: 20px;
+  color: #777;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Sudoku Container */
+.sudoku-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Controls */
+.sudoku-controls {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.control-button {
+  padding: 10px 15px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.control-button:hover {
+  background-color: #e0e0e0;
+}
+
+.solve-button {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.solve-button:hover {
+  background-color: #3a80d2;
+}
+
+.solving {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Error Message */
+.error-message {
+  color: #e74c3c;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: bold;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Sudoku Board */
+.sudoku-board {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #333;
+}
+
+.sudoku-row {
+  display: flex;
+}
+
+/* Sudoku Cell */
+.sudoku-cell {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sudoku-cell.selected {
+  background-color: #d4e6f7;
+  border-color: #4a90e2;
+}
+
+.sudoku-cell.alternate-box {
+  background-color: #f9f9f9;
+}
+
+.sudoku-cell.border-bottom {
+  border-bottom: 2px solid #333;
+}
+
+.sudoku-cell.border-right {
+  border-right: 2px solid #333;
+}
+
+/* Number Pad */
+.number-pad {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.number-button {
+  padding: 15px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.number-button:hover {
+  background-color: #e0e0e0;
+}
+
+.erase-button {
+  grid-column: span 2;
+  background-color: #f0d0d0;
+}
+
+.erase-button:hover {
+  background-color: #e0c0c0;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .sudoku-main {
+    padding: 10px;
+  }
+  
+  .sudoku-cell {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+  
+  .number-pad {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .erase-button {
+    grid-column: span 3;
+  }
+}
